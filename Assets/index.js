@@ -83,18 +83,25 @@ const questions = [
 {
     type: 'input',
     name: 'contributing',
-    message: 'Please explain how users can contribute to what you are doing (if applicable).',
+    message: 'Please explain how users can contribute to the project (if applicable).',
     
 },
 // Test for project
 {
     type: 'input',
     name: 'tests',
-    message: 'Please provide tests for project, and explain how to test (if any).',
+    message: 'Please provide tests for project, and explain how to test (if applicable).',
 },];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log('Markdown file successfully created!')
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {}
