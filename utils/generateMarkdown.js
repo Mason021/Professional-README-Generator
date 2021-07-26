@@ -55,7 +55,7 @@ function generateMarkdown(userInput, userData) {
   if (userInput.tests !== '') { draftTable += `
   * [Tests](#tests)` };
   
-  // Create title and description
+  // Create Project title and description
   // Generate badges
   let draftMarkdown = 
   `# ${userInput.title}
@@ -67,10 +67,10 @@ function generateMarkdown(userInput, userData) {
   
   ${userInput.description}
   `
-  // Add table of contents data to markdown
+  // Add table of contents data to the markdown
   draftMarkdown += draftTable;
   
-  // Add license section to markdown
+  // Add license section to the markdown
   draftMarkdown += `
   * [License](#license)`;
 

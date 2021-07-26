@@ -5,15 +5,28 @@
   ## Description 
   
   
-  README Generator to quickly create a professional README for a new project
+  here you can place a description of the project you are working on
   ## Table of Contents
+  * [Installation](#installation)
   * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
   * [License](#license)
+  
+  ## Installation
+  
+  
+  here needed installation instructions
   
   ## Usage 
   
    
-  ok
+  can add info for the project and also a good place to show off a gif of the project in use
+  
+  ## Tests
+  
+  
+  n/a
   
   ## License
   
