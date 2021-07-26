@@ -12,8 +12,7 @@
   
   ## Usage 
   
-   
-  ok
+    ![working-project]https://github.com/Mason021/Professional-README-Generator/blob/main/utils/images/README%20example%20video.gif
   
   ## License
   
