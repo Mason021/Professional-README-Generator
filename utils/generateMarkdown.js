@@ -14,51 +14,32 @@
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
-
-
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
-// function renderLicenseBadge(license) {}
-
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
-// // TODO: Create a function to generate markdown for README
-// function generateMarkdown(userInput,) {
-//   return `# ${data.title}
-
-// `;
-// }
-
-// module.exports = generateMarkdown;
-
 // function to generate markdown for README
 function generateMarkdown(userInput, userData) {
 
   // Plug userReponses into table of contents
   let draftTable = `## Table of Contents`;
 
-  if (userInput.installation !== '') { draftTable += `
+  if (userInput.installation !== '') {
+    draftTable += `
   * [Installation](#installation)` };
 
-  if (userInput.usage !== '') { draftTable += `
+  if (userInput.usage !== '') {
+    draftTable += `
   * [Usage](#usage)` };
 
-  if (userInput.contributing !== '') { draftTable += `
+  if (userInput.contributing !== '') {
+    draftTable += `
   * [Contributing](#contributing)` };
 
-  if (userInput.tests !== '') { draftTable += `
+  if (userInput.tests !== '') {
+    draftTable += `
   * [Tests](#tests)` };
-  
+
   // Create Project title and description
   // Generate badges
-  let draftMarkdown = 
-  `# ${userInput.title}
+  let draftMarkdown =
+    `# ${userInput.title}
   ![Badge for GitHub](https://img.shields.io/github/languages/top/${userInput.username}/${userInput.repository}?style=flat&logo=appveyor) 
   
   
@@ -69,16 +50,16 @@ function generateMarkdown(userInput, userData) {
   `
   // Add table of contents data to the markdown
   draftMarkdown += draftTable;
-  
+
   // Add license section to the markdown
   draftMarkdown += `
   * [License](#license)`;
 
   // Create installation section
   if (userInput.installation !== '') {
-  
-  draftMarkdown +=
-  `
+
+    draftMarkdown +=
+      `
   
   ## Installation
   
@@ -88,20 +69,20 @@ function generateMarkdown(userInput, userData) {
 
   // Create usage section
   if (userInput.usage !== '') {
-  
-  draftMarkdown +=
-  
-  `
+
+    draftMarkdown +=
+
+      `
   
   ## Usage 
   
    
   ${userInput.usage}`
   };
-  
+
   // Create contribution section
   if (userInput.contributing !== '') {
-  `
+    `
   
   ## Contributing
   
@@ -111,9 +92,9 @@ function generateMarkdown(userInput, userData) {
 
   // Make tests section
   if (userInput.tests !== '') {
-  
-  draftMarkdown +=
-  `
+
+    draftMarkdown +=
+      `
   
   ## Tests
   
@@ -123,7 +104,7 @@ function generateMarkdown(userInput, userData) {
 
   // Connect userInput to license section
   draftMarkdown +=
-  `
+    `
   
   ## License
   
@@ -131,8 +112,8 @@ function generateMarkdown(userInput, userData) {
   `;
 
   // Questions section
-  let draftDeveloper = 
-  `
+  let draftDeveloper =
+    `
   ---
   
   ## Questions?
@@ -144,13 +125,13 @@ function generateMarkdown(userInput, userData) {
 
   // If GitHub email is not null, add to Developer section
   if (userData.email !== null) {
-  
-  draftDeveloper +=
-  `
+
+    draftDeveloper +=
+      `
   Email: ${userData.email}
   `};
 
- // Add developer section to markdown
+  // Add developer section to markdown
   draftMarkdown += draftDeveloper;
 
   // Return markdown
