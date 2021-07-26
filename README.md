@@ -5,7 +5,8 @@
   ## Description 
   
   
-  README Generator to quickly create a professional README for a new project
+  Professional README Generator - Quickly create a professional README for a new project by using a command-line application to generate one.
+  
   ## Table of Contents
   * [Usage](#usage)
   * [License](#license)
@@ -13,7 +14,7 @@
   ## Usage 
   
   ![working-project](https://github.com/Mason021/Professional-README-Generator/blob/main/utils/images/README%20example%20video.gif)
-  
+
   ## License
   
   mit
