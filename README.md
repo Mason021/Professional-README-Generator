@@ -11,7 +11,9 @@
   * [Usage](#usage)
   * [License](#license)
   
-  ## Usage 
+  ## Usage
+
+  First Clone the repository and open in your workstation.  Using the integrated terminal enter the command 'node index.js' to run a series of questions.  Answer each prompt and a new README.md file will generate.  
   
   ![working-project](https://github.com/Mason021/Professional-README-Generator/blob/main/utils/images/README%20example%20video.gif)
 

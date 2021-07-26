@@ -109,7 +109,6 @@ async function init() {
     try {
         const userInput = await inquirer.prompt(questions);
         console.log("Inputs entered: ", userInput);
-        console.log("Please wait");
 
         const userData = await api.getUser(userInput);
         console.log("GitHub User info: ", userData);
@@ -124,5 +123,5 @@ async function init() {
     }
 };
 
-// Function call to initialize app
+// Function call to initialize app - Let it rip!
 init();
