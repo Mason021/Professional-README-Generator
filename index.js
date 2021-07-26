@@ -69,7 +69,7 @@ const questions = [
 {
     type: 'input',
     name: 'usage',
-    message: 'Please enter project info and examples for usage section.',
+    message: 'Place examples of project in use here with needed information to explain gif or image.',
 },
 // License Select Section
 {
