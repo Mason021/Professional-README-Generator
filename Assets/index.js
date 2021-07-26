@@ -11,7 +11,7 @@ const questions = [
     {
     type: 'input',
     name: 'username',
-    message: 'insert your GitHub username.',
+    message: 'Insert your GitHub username.',
     // Making sure they entered something as a username
     validate: function (answer) {
         if (answer.length < 1) {
@@ -103,8 +103,26 @@ function writeToFile(fileName, data) {
     });
 }
 
+const asyncWriteFileKeepsThingsSmooth = util.promisify(writeToFile);
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+    try {
+        const userInput = await inquirer.prompt(questions);
+        console.log("Inputs entered: ", userInput);
+        console.log("Please wait");
+
+        const userData = await api.getUser(userInput);
+        console.log("GitHub User info: ", userData);
+
+        console.log("just a few more kinks to work out")
+        const markdown = generateMarkdown(userInput, userData);
+        console.log(markdown);
+
+        await asyncWriteFileKeepsThingsSmooth('projectREADME.md', markdown);
+    }catch (error) {
+        console.log(error);
+    }
+};
 
 // Function call to initialize app
 init();
