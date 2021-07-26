@@ -16,23 +16,146 @@
 
 
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// // TODO: Create a function that returns a license badge based on which license is passed in
+// // If there is no license, return an empty string
+// function renderLicenseBadge(license) {}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// // TODO: Create a function that returns the license link
+// // If there is no license, return an empty string
+// function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// // TODO: Create a function that returns the license section of README
+// // If there is no license, return an empty string
+// function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+// // TODO: Create a function to generate markdown for README
+// function generateMarkdown(userInput,) {
+//   return `# ${data.title}
 
-`;
-}
+// `;
+// }
 
+// module.exports = generateMarkdown;
+
+// function to generate markdown for README
+function generateMarkdown(userInput, userData) {
+
+  // Plug userReponses into table of contents
+  let draftTable = `## Table of Contents`;
+
+  if (userInput.installation !== '') { draftTable += `
+  * [Installation](#installation)` };
+
+  if (userInput.usage !== '') { draftTable += `
+  * [Usage](#usage)` };
+
+  if (userInput.contributing !== '') { draftTable += `
+  * [Contributing](#contributing)` };
+
+  if (userInput.tests !== '') { draftTable += `
+  * [Tests](#tests)` };
+  
+  // Create title and description
+  // Generate badges
+  let draftMarkdown = 
+  `# ${userInput.title}
+  ![Badge for GitHub](https://img.shields.io/github/languages/top/${userInput.username}/${userInput.repository}?style=flat&logo=appveyor) 
+  
+  
+  ## Description 
+  
+  
+  ${userInput.description}
+  `
+  // Add table of contents data to markdown
+  draftMarkdown += draftTable;
+  
+  // Add license section to markdown
+  draftMarkdown += `
+  * [License](#license)`;
+
+  // Create installation section
+  if (userInput.installation !== '') {
+  
+  draftMarkdown +=
+  `
+  
+  ## Installation
+  
+  
+  ${userInput.installation}`
+  };
+
+  // Create usage section
+  if (userInput.usage !== '') {
+  
+  draftMarkdown +=
+  
+  `
+  
+  ## Usage 
+  
+   
+  ${userInput.usage}`
+  };
+  
+  // Create contribution section
+  if (userInput.contributing !== '') {
+  `
+  
+  ## Contributing
+  
+  
+  ${userInput.contributing}`
+  };
+
+  // Make tests section
+  if (userInput.tests !== '') {
+  
+  draftMarkdown +=
+  `
+  
+  ## Tests
+  
+  
+  ${userInput.tests}`
+  };
+
+  // Connect userInput to license section
+  draftMarkdown +=
+  `
+  
+  ## License
+  
+  ${userInput.license}
+  `;
+
+  // Questions section
+  let draftDeveloper = 
+  `
+  ---
+  
+  ## Questions?
+  
+  For any questions, please contact me with the information below:
+ 
+  GitHub: [@${userData.login}](${userData.url})
+  `;
+
+  // If GitHub email is not null, add to Developer section
+  if (userData.email !== null) {
+  
+  draftDeveloper +=
+  `
+  Email: ${userData.email}
+  `};
+
+ // Add developer section to markdown
+  draftMarkdown += draftDeveloper;
+
+  // Return markdown
+  return draftMarkdown;
+};
+
+// Export markdown module
 module.exports = generateMarkdown;
